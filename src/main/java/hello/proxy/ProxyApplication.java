@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 
 //@Import(AppV1Config.class)
-@Import(AppV2Config.class)
+@Import({AppV1Config.class, AppV2Config.class})
 //componentScan 대상 지정해뒀으니까 @Import 써준것. v1, v2, v3 쓰려고 ㅎㅎ
 @SpringBootApplication(scanBasePackages = "hello.proxy.app") //주의
 public class ProxyApplication {
