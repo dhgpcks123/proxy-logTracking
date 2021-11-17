@@ -60,6 +60,14 @@ public class ReflectionTest {
         Method methodCallB = classHello.getMethod("callB");
         dynamicCall(methodCallB, target);
 
+        /**
+         * 주의 : 리플렉션을 사용해서 메타 정보 사용해서 애플리케이션 동적으로 만들 수 있다.
+         * 하지만 리플렉션은 런타임에 동작하기 떄문에(문자 넣었잖아) 컴파일 시점에서는... 오류를 알 수 없다.
+         * 서비스 할 때 오류가 나타날 수 있다는 것.
+         * 그래서 일반적으로 잘 사용 안 한다... 프로그래밍 언어는 타입 정보를 기반으로
+         * 컴파일 시점에 오류를 잡는 게 큰 이점인데 리플렉션은 역행하는 방식이다.
+         */
+
     }
 
     private void dynamicCall(Method method, Object target) throws Exception{
